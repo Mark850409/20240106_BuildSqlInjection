@@ -14,6 +14,6 @@ for /f %%i in ('docker ps --format "{{.Names}}"') do If not "%%i" == "" (
 )
 
 docker pull cutecat1134/sqlinjection
-docker run -d --name victim -p 80:80 cutecat1134/sqlinjection
+docker run -it --name victim -p 80:80 cutecat1134/sqlinjection
 docker exec victim bash -c "sh lampp.sh"
 pause
